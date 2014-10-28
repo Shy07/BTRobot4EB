@@ -1,0 +1,8 @@
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\bin\Debug\BTRobot4EB.exe
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\bin\Debug\BTRobot4EB.pdb
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\obj\Debug\BTRobot4EB.csprojResolveAssemblyReference.cache
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\obj\Debug\BTRobot4EB.Properties.Resources.resources
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\obj\Debug\BTRobot4EB.csproj.GenerateResource.Cache
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\obj\Debug\BTRobot4EB.exe
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\obj\Debug\BTRobot4EB.pdb
+d:\users\lynch\documents\visual studio 2013\Projects\BTRobot4EB\BTRobot4EB\obj\Debug\BTRobot4EB.mainForm.resources
