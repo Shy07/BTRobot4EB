@@ -1,19 +1,19 @@
-﻿生成启动时间为 2014/10/28 14:08:10。
-     1>项目“d:\Users\Lynch\documents\visual studio 2013\Projects\QR_Encode\QR_Encode\QR_Encode.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2014/10/31 9:56:19。
+     1>项目“D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\QR_Encode\QR_Encode\QR_Encode.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D QR_ENCODE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
      1>main.cpp(168): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : 参见“fopen”的声明
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\users\lynch\documents\visual studio 2013\Projects\QR_Encode\Release\QR_Encode.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"d:\users\lynch\documents\visual studio 2013\Projects\QR_Encode\Release\QR_Encode.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"d:\users\lynch\documents\visual studio 2013\Projects\QR_Encode\Release\QR_Encode.lib" /MACHINE:X86 /SAFESEH /DLL Release\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\Release\QR_Encode.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\Release\QR_Encode.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\Release\QR_Encode.lib" /MACHINE:X86 /SAFESEH /DLL Release\main.obj
          Release\QR_Encode.obj
-            正在创建库 d:\users\lynch\documents\visual studio 2013\Projects\QR_Encode\Release\QR_Encode.lib 和对象 d:\users\lynch\documents\visual studio 2013\Projects\QR_Encode\Release\QR_Encode.exp
+            正在创建库 D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\Release\QR_Encode.lib 和对象 D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\Release\QR_Encode.exp
          正在生成代码
          已完成代码的生成
-         QR_Encode.vcxproj -> d:\users\lynch\documents\visual studio 2013\Projects\QR_Encode\Release\QR_Encode.dll
-     1>已完成生成项目“d:\Users\Lynch\documents\visual studio 2013\Projects\QR_Encode\QR_Encode\QR_Encode.vcxproj”(Build 个目标)的操作。
+         QR_Encode.vcxproj -> D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\Release\QR_Encode.dll
+     1>已完成生成项目“D:\Users\Lynch\Documents\Visual Studio 2013\Projects\BTRobot4EB\QR_Encode\QR_Encode\QR_Encode.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.56
+已用时间 00:00:01.19

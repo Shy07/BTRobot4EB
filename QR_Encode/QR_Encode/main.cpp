@@ -171,3 +171,9 @@ extern __declspec(dllexport) int test()
 	system("mspaint dst.bmp");
 	return 0;
 }
+
+extern __declspec(dllexport) int hello()
+{
+	printf("Hello");
+	return 0;
+}
