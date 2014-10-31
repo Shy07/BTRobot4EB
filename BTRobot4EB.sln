@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTRobot4EB", "BTRobot4EB\BT
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QR_Encode", "QR_Encode\QR_Encode\QR_Encode.vcxproj", "{61B3CD81-3C1F-4562-A79F-234484AC4A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "QR_Encode\test\test.csproj", "{0BC98734-FF2F-4B0C-9001-E48B6036569D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{0BC98734-FF2F-4B0C-9001-E48B6036569D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

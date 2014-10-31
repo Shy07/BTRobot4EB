@@ -13,14 +13,14 @@ int nMaskingNo   =  -1; // 只用这个
 
 int **resize(unsigned char p[177][177], int m, int n)//m为原始图像大小,n为放大的大小
 {
-int **temp;
+	int **temp;
 	int x,y;
-	temp = (int **)malloc(n*m*sizeof(int));//默认扩大两倍
-	memset(temp,0,n*m*sizeof(int));
-	for (int i =0 ; i < n*m; i++)
+	temp = (int **)malloc(n * m * sizeof(int));//默认扩大两倍
+	memset(temp, 0, n * m * sizeof(int));
+	for (int i =0 ; i < n * m; i++)
 	{
-		temp[i] = (int*)malloc(n*m*sizeof(int));
-		memset(temp[i],0, n*m*sizeof(int));
+		temp[i] = (int *)malloc(n * m * sizeof(int));
+		memset(temp[i], 0, n * m * sizeof(int));
 	}
 	for (int i = 0 ; i < m; i++)
 	{
@@ -32,7 +32,7 @@ int **temp;
 				{
 					for (y = 0; y < n; y++)
 					{
-						temp[n*i+x][n*j+y] = 0;
+						temp[n * i + x][n * j + y] = 0;
 					}
 				}
 			}
@@ -44,7 +44,7 @@ int **temp;
 				{
 					for (y = 0; y < n; y++)
 					{
-						temp[n*i+x][n*j+y] = 255;
+						temp[n * i + x][n * j + y] = 255;
 					}
 				}
 			}
@@ -159,21 +159,16 @@ unsigned char *bitSrtream(const char *src, int *length, int m) //m表示放大倍数
 	return temp;
 }
 
-extern __declspec(dllexport) int test()
+//extern __declspec(dllexport) 
+int generate(char * str, char * dir)
 {
 	int length = 0;
-	unsigned char * p = bitSrtream("google.com", &length, 10);
-	char *dstBMp = "dst.bmp";
-	FILE *outBmp;
-	outBmp = fopen(dstBMp, "wb");//可写打开或者新建一个二进制文件
-	fwrite(p, length, 1, outBmp);
-	fclose(outBmp);
-	system("mspaint dst.bmp");
-	return 0;
-}
+	unsigned char * data = bitSrtream(str, &length, 4);
 
-extern __declspec(dllexport) int hello()
-{
-	printf("Hello");
+	FILE *outBmp;
+	outBmp = fopen(dir, "wb");//可写打开或者新建一个二进制文件
+	fwrite(data, length, 1, outBmp);
+	fclose(outBmp);
+
 	return 0;
 }
