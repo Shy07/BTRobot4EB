@@ -30,13 +30,16 @@
         {
             this.qr_create = new System.Windows.Forms.Button();
             this.groupBoxQR = new System.Windows.Forms.GroupBox();
-            this.textBoxQR = new System.Windows.Forms.TextBox();
-            this.buttonDir = new System.Windows.Forms.Button();
-            this.textBoxDir = new System.Windows.Forms.TextBox();
-            this.buttonGenerate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxAIDir = new System.Windows.Forms.TextBox();
+            this.buttonAIDir = new System.Windows.Forms.Button();
+            this.pictureBoxQR = new System.Windows.Forms.PictureBox();
             this.checkBoxAI = new System.Windows.Forms.CheckBox();
+            this.buttonGenerate = new System.Windows.Forms.Button();
+            this.textBoxDir = new System.Windows.Forms.TextBox();
+            this.buttonDir = new System.Windows.Forms.Button();
+            this.textBoxQR = new System.Windows.Forms.TextBox();
             this.groupBoxQR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQR)).BeginInit();
             this.SuspendLayout();
             // 
             // qr_create
@@ -55,6 +58,9 @@
             // 
             // groupBoxQR
             // 
+            this.groupBoxQR.Controls.Add(this.textBoxAIDir);
+            this.groupBoxQR.Controls.Add(this.buttonAIDir);
+            this.groupBoxQR.Controls.Add(this.pictureBoxQR);
             this.groupBoxQR.Controls.Add(this.checkBoxAI);
             this.groupBoxQR.Controls.Add(this.buttonGenerate);
             this.groupBoxQR.Controls.Add(this.textBoxDir);
@@ -68,34 +74,49 @@
             this.groupBoxQR.TabStop = false;
             this.groupBoxQR.Text = "QR生成设置";
             // 
-            // textBoxQR
+            // textBoxAIDir
             // 
-            this.textBoxQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxQR.Location = new System.Drawing.Point(19, 28);
-            this.textBoxQR.Multiline = true;
-            this.textBoxQR.Name = "textBoxQR";
-            this.textBoxQR.Size = new System.Drawing.Size(439, 68);
-            this.textBoxQR.TabIndex = 0;
-            this.textBoxQR.Text = "请输入文本...";
+            this.textBoxAIDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAIDir.Enabled = false;
+            this.textBoxAIDir.Location = new System.Drawing.Point(19, 415);
+            this.textBoxAIDir.Name = "textBoxAIDir";
+            this.textBoxAIDir.Size = new System.Drawing.Size(390, 23);
+            this.textBoxAIDir.TabIndex = 6;
+            this.textBoxAIDir.Text = "请设置 AI 安装路径";
+            this.textBoxAIDir.Visible = false;
             // 
-            // buttonDir
+            // buttonAIDir
             // 
-            this.buttonDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDir.Location = new System.Drawing.Point(415, 111);
-            this.buttonDir.Name = "buttonDir";
-            this.buttonDir.Size = new System.Drawing.Size(42, 23);
-            this.buttonDir.TabIndex = 1;
-            this.buttonDir.Text = "...";
-            this.buttonDir.UseVisualStyleBackColor = true;
-            this.buttonDir.Click += new System.EventHandler(this.buttonDir_Click);
+            this.buttonAIDir.Enabled = false;
+            this.buttonAIDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAIDir.Location = new System.Drawing.Point(415, 415);
+            this.buttonAIDir.Name = "buttonAIDir";
+            this.buttonAIDir.Size = new System.Drawing.Size(42, 23);
+            this.buttonAIDir.TabIndex = 5;
+            this.buttonAIDir.Text = "...";
+            this.buttonAIDir.UseVisualStyleBackColor = true;
+            this.buttonAIDir.Visible = false;
+            this.buttonAIDir.Click += new System.EventHandler(this.buttonAIDir_Click);
             // 
-            // textBoxDir
+            // pictureBoxQR
             // 
-            this.textBoxDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDir.Location = new System.Drawing.Point(19, 111);
-            this.textBoxDir.Name = "textBoxDir";
-            this.textBoxDir.Size = new System.Drawing.Size(390, 23);
-            this.textBoxDir.TabIndex = 2;
+            this.pictureBoxQR.Location = new System.Drawing.Point(120, 212);
+            this.pictureBoxQR.Name = "pictureBoxQR";
+            this.pictureBoxQR.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxQR.TabIndex = 4;
+            this.pictureBoxQR.TabStop = false;
+            // 
+            // checkBoxAI
+            // 
+            this.checkBoxAI.AutoSize = true;
+            this.checkBoxAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxAI.Location = new System.Drawing.Point(337, 212);
+            this.checkBoxAI.Name = "checkBoxAI";
+            this.checkBoxAI.Size = new System.Drawing.Size(128, 21);
+            this.checkBoxAI.TabIndex = 3;
+            this.checkBoxAI.Text = "保存后在 AI 中打开";
+            this.checkBoxAI.UseVisualStyleBackColor = true;
+            this.checkBoxAI.CheckedChanged += new System.EventHandler(this.checkBoxAI_CheckedChanged);
             // 
             // buttonGenerate
             // 
@@ -110,35 +131,40 @@
             this.buttonGenerate.UseVisualStyleBackColor = true;
             this.buttonGenerate.Click += new System.EventHandler(this.buttonGe_Click);
             // 
-            // button1
+            // textBoxDir
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(51, 123);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "QR生成";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBoxDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDir.Location = new System.Drawing.Point(19, 111);
+            this.textBoxDir.Name = "textBoxDir";
+            this.textBoxDir.Size = new System.Drawing.Size(390, 23);
+            this.textBoxDir.TabIndex = 2;
             // 
-            // checkBoxAI
+            // buttonDir
             // 
-            this.checkBoxAI.AutoSize = true;
-            this.checkBoxAI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBoxAI.Location = new System.Drawing.Point(337, 212);
-            this.checkBoxAI.Name = "checkBoxAI";
-            this.checkBoxAI.Size = new System.Drawing.Size(128, 21);
-            this.checkBoxAI.TabIndex = 3;
-            this.checkBoxAI.Text = "保存后在 AI 中打开";
-            this.checkBoxAI.UseVisualStyleBackColor = true;
+            this.buttonDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDir.Location = new System.Drawing.Point(415, 111);
+            this.buttonDir.Name = "buttonDir";
+            this.buttonDir.Size = new System.Drawing.Size(42, 23);
+            this.buttonDir.TabIndex = 1;
+            this.buttonDir.Text = "...";
+            this.buttonDir.UseVisualStyleBackColor = true;
+            this.buttonDir.Click += new System.EventHandler(this.buttonDir_Click);
+            // 
+            // textBoxQR
+            // 
+            this.textBoxQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxQR.Location = new System.Drawing.Point(19, 28);
+            this.textBoxQR.Multiline = true;
+            this.textBoxQR.Name = "textBoxQR";
+            this.textBoxQR.Size = new System.Drawing.Size(439, 68);
+            this.textBoxQR.TabIndex = 0;
+            this.textBoxQR.Text = "请输入文本...";
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 480);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBoxQR);
             this.Controls.Add(this.qr_create);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -151,6 +177,7 @@
             this.Text = "BTRobot4EB";
             this.groupBoxQR.ResumeLayout(false);
             this.groupBoxQR.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQR)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,8 +190,10 @@
         private System.Windows.Forms.TextBox textBoxDir;
         private System.Windows.Forms.Button buttonDir;
         private System.Windows.Forms.Button buttonGenerate;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBoxAI;
+        private System.Windows.Forms.PictureBox pictureBoxQR;
+        private System.Windows.Forms.TextBox textBoxAIDir;
+        private System.Windows.Forms.Button buttonAIDir;
     }
 }
 

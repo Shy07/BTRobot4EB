@@ -650,7 +650,7 @@ int CQR_Encode::EncodeData(int nLevel, int nVersion, int bAutoExtent, int nMaski
 	
 	m_ncAllCodeWord = QR_VersonInfo[m_nVersion].ncAllCodeWord;
 
-	memset(m_byAllCodeWord,0,m_ncAllCodeWord);
+	memset(m_byAllCodeWord, 0, m_ncAllCodeWord);
 	int nDataCwIndex = 0; 
 
 	
@@ -705,7 +705,7 @@ int CQR_Encode::EncodeData(int nLevel, int nVersion, int bAutoExtent, int nMaski
 	for (i = 0; i < ncBlock1; ++i)
 	{
 
-		memset(m_byRSWork,0,sizeof(m_byRSWork));
+		memset(m_byRSWork, 0, sizeof(m_byRSWork));
 
 		memmove(m_byRSWork, m_byDataCodeWord + nDataCwIndex, ncDataCw1);
 
@@ -724,7 +724,7 @@ int CQR_Encode::EncodeData(int nLevel, int nVersion, int bAutoExtent, int nMaski
 	for (i = 0; i < ncBlock2; ++i)
 	{
 
-		memset(m_byRSWork,0,sizeof(m_byRSWork));
+		memset(m_byRSWork, 0, sizeof(m_byRSWork));
 		memmove(m_byRSWork, m_byDataCodeWord + nDataCwIndex, ncDataCw2);
 
 		GetRSCodeWord(m_byRSWork, ncDataCw2, ncRSCw2);
@@ -797,7 +797,7 @@ int CQR_Encode::GetEncodeVersion(int nVersion, const char * lpsSource, int ncLen
 int CQR_Encode::EncodeSourceData(const char * lpsSource, int ncLength, int nVerGroup)
 {
 
-memset(m_nBlockLength,0,sizeof(m_nBlockLength));
+	memset(m_nBlockLength, 0, sizeof(m_nBlockLength));
 	int i, j;
 
 	for (m_ncDataBlock = i = 0; i < ncLength; ++i)
@@ -1045,7 +1045,7 @@ memset(m_nBlockLength,0,sizeof(m_nBlockLength));
 
 	m_ncDataCodeWordBit = 0; 
 
-memset(m_byDataCodeWord,0,MAX_DATACODEWORD);
+	memset(m_byDataCodeWord,0,MAX_DATACODEWORD);
 	for (i = 0; i < m_ncDataBlock && m_ncDataCodeWordBit != -1; ++i)
 	{
 		if (m_byBlockMode[i] == QR_MODE_NUMERAL)//Êý×ÖÄ£Ê½

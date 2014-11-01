@@ -6,7 +6,7 @@
 
 
 int m_bDataEncoded;//是否已经编码
-int nLevel = 0;
+int nLevel = 3;
 int nVersion = 0;
 int bAutoExtent = 1;   // 只用这个
 int nMaskingNo   =  -1; // 只用这个
@@ -52,6 +52,7 @@ int **resize(unsigned char p[177][177], int m, int n)//m为原始图像大小,n为放大的
 	}
 	return temp;
 }
+
 void SetBmpInfoHeader(PBITMAPINFOHEADER pbmpih, int h, int w)
 {
 	
@@ -109,8 +110,8 @@ unsigned char *bitSrtream(const char *src, int *length, int m) //m表示放大倍数
 		unsigned char G;
 		unsigned char R;
 	};
-	struct COLOR  white = {255, 255, 255};
-	struct COLOR  black = {0, 0, 0};
+	struct COLOR white = {255, 255, 255};
+	struct COLOR black = {0, 0, 0};
 	int i,j;
 	CQR_Encode* pQR_Encode = new CQR_Encode;
 	m_bDataEncoded = pQR_Encode->EncodeData(nLevel, nVersion, bAutoExtent, nMaskingNo, src);
@@ -124,6 +125,7 @@ unsigned char *bitSrtream(const char *src, int *length, int m) //m表示放大倍数
 	BITMAPFILEHEADER file_head;//14字节
 	SetBmpInfoHeader(&info_head, h, w);
 	SetBmpFileHeader(&file_head, &info_head);
+
 	unsigned char * temp = (unsigned char *)malloc(file_head.bfSize);
 	*length = file_head.bfSize;
 	BITMAPFILEHEADER file;
@@ -135,26 +137,28 @@ unsigned char *bitSrtream(const char *src, int *length, int m) //m表示放大倍数
 	memcpy(temp, &info_head, 40);
 	memcpy(&info, temp, 40);
 	temp += 40;
-	for (i = 0; i < h; i++)
+
+	for (i = h - 1; i >= 0; i--)
 	{
 		for (j = 0; j < w; j++)
 		{
-			if (q[i][j] == 255)
-			{				
-					memcpy(temp, &black, 3);
-					temp+=3;
+			if (q[j][i] == 255)
+			{
+				memcpy(temp, &black, 3);
+				temp += 3;
 			}
-			else  if (q[i][j] == 0)
+			else  if (q[j][i] == 0)
 			{
 				memcpy(temp, &white, 3);
 				temp += 3;
 			}
 		}
-		int fillbits = ( 4 - (w * 3 ) % 4 ) % 4;
+		int fillbits = (4 - (w * 3) % 4) % 4;
 		int fill = 0;
 		memcpy(temp, &fill, fillbits);
 		temp += fillbits;
 	}
+
 	temp -= file_head.bfSize;
 	return temp;
 }
@@ -163,7 +167,7 @@ unsigned char *bitSrtream(const char *src, int *length, int m) //m表示放大倍数
 int generate(char * str, char * dir)
 {
 	int length = 0;
-	unsigned char * data = bitSrtream(str, &length, 4);
+	unsigned char * data = bitSrtream(str, &length, 12);
 
 	FILE *outBmp;
 	outBmp = fopen(dir, "wb");//可写打开或者新建一个二进制文件
